@@ -94,12 +94,3 @@ describe(`File utility library`, () => {
 	})
 
 });
-
-
-// cp.exec(`cp ../htmls/test_beauty.html ../htmls/test_mini.html`, (err, stdout, stderr) => { console.log(stdout);
-// 	if (err) throw err;
-// });
-
-// cp.exec(`cp ../htmls/test.html ../htmls/test_beauty.html`, (err, stdout, stderr) => { console.log(stdout);
-// 	if (err) throw err;
-// });

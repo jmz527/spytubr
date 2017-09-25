@@ -10,16 +10,9 @@ const host = process.env.HOST || `localhost`
 const port = process.env.PORT || process.argv[2] || 3000
 
 const routes = require(`./routes`)
-// const cls_routes = require(`./cls/routes`)
-// const igrm_routes = require(`./igrm/routes`)
-// const rdts_routes = require(`./rdts/routes`)
 const yts_routes = require(`./yts/routes`)
 
 app.set(`views`, path.join(__dirname, `views`))
-
-// app.set(`cls`, path.join(__dirname, `cls`))
-// app.set(`igrms`, path.join(__dirname, `igrms`))
-// app.set(`rdts`, path.join(__dirname, `rdts`))
 app.set(`yts`, path.join(__dirname, `yts`))
 
 app.set(`view engine`, `ejs`) // view engine setup
@@ -29,9 +22,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // Setting routes
 app.use(`/`, routes)
-// app.use(`/cls`, cls_routes)
-// app.use(`/igrms`, igrm_routes)
-// app.use(`/rdts`, rdts_routes)
 app.use(`/yts`, yts_routes)
 
 app.use(express.static(path.join(__dirname, `views/assets`)))

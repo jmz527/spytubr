@@ -2,34 +2,6 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# minify & beautify cls
-
-node "${PWD}"/util/file_util_interface.js minify "${PWD}"/htmls/cls_apts_brk.html
-node "${PWD}"/util/file_util_interface.js minify "${PWD}"/htmls/cls_apts_mnh.html
-node "${PWD}"/util/file_util_interface.js minify "${PWD}"/htmls/cls_jobs_sof.html
-
-node "${PWD}"/util/file_util_interface.js beautify "${PWD}"/htmls/cls_apts_brk.html
-node "${PWD}"/util/file_util_interface.js beautify "${PWD}"/htmls/cls_apts_mnh.html
-node "${PWD}"/util/file_util_interface.js beautify "${PWD}"/htmls/cls_jobs_sof.html
-
-# minify & beautify rdts
-
-node "${PWD}"/util/file_util_interface.js minify "${PWD}"/htmls/rdt_james527_upvoted.html
-node "${PWD}"/util/file_util_interface.js minify "${PWD}"/htmls/rdt_moootPoint_upvoted.html
-node "${PWD}"/util/file_util_interface.js minify "${PWD}"/htmls/rdt_jgametime_upvoted.html
-
-node "${PWD}"/util/file_util_interface.js beautify "${PWD}"/htmls/rdt_james527_upvoted.html
-node "${PWD}"/util/file_util_interface.js beautify "${PWD}"/htmls/rdt_moootPoint_upvoted.html
-node "${PWD}"/util/file_util_interface.js beautify "${PWD}"/htmls/rdt_jgametime_upvoted.html
-
-node "${PWD}"/util/file_util_interface.js minify "${PWD}"/htmls/rdt_james527_downvoted.html
-node "${PWD}"/util/file_util_interface.js minify "${PWD}"/htmls/rdt_moootPoint_downvoted.html
-node "${PWD}"/util/file_util_interface.js minify "${PWD}"/htmls/rdt_jgametime_downvoted.html
-
-node "${PWD}"/util/file_util_interface.js beautify "${PWD}"/htmls/rdt_james527_downvoted.html
-node "${PWD}"/util/file_util_interface.js beautify "${PWD}"/htmls/rdt_moootPoint_downvoted.html
-node "${PWD}"/util/file_util_interface.js beautify "${PWD}"/htmls/rdt_jgametime_downvoted.html
-
 # minify & beautify yts
 
 node "${PWD}"/util/file_util_interface.js minify "${PWD}"/htmls/yts_alt_shift_x.html

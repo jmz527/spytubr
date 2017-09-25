@@ -2,24 +2,6 @@
 
 PWD="$( pwd )"
 
-# node "${PWD}"/cls/cls_interface.js match brk apts
-# node "${PWD}"/cls/cls_interface.js match mnh apts
-# node "${PWD}"/cls/cls_interface.js match sof 'jobs'
-
-node "${PWD}"/igrm/igrm_interface.js match jmz527
-node "${PWD}"/igrm/igrm_interface.js match nycxclothes
-node "${PWD}"/igrm/igrm_interface.js match trudy_lines_tattoo
-node "${PWD}"/igrm/igrm_interface.js match lazerliz
-node "${PWD}"/igrm/igrm_interface.js match brian_evans_ft_2_chainz
-node "${PWD}"/igrm/igrm_interface.js match kristiwallsnyc
-node "${PWD}"/igrm/igrm_interface.js match jawcooper
-
-node "${PWD}"/rdts/rdts_interface.js match james527 upvoted
-node "${PWD}"/rdts/rdts_interface.js match moootPoint upvoted
-
-node "${PWD}"/rdts/rdts_interface.js match james527 downvoted
-node "${PWD}"/rdts/rdts_interface.js match moootPoint downvoted
-
 node "${PWD}"/yts/yts_interface.js match alt_shift_x
 node "${PWD}"/yts/yts_interface.js match cgp_grey
 node "${PWD}"/yts/yts_interface.js match colbert
