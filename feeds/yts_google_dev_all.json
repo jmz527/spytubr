@@ -1,0 +1,384 @@
+{
+    "channel": "google_dev",
+    "channel_id": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+    "data": [
+        {
+            "id": "oBC5poZlqB4",
+            "title": "The Developer Show (TL;DR 082)",
+            "href": "https://www.youtube.com/watch?v=oBC5poZlqB4",
+            "duration": " - Duration: 2 minutes, 19 seconds.",
+            "views": "2,014 views",
+            "active": true,
+            "watched": false
+        },
+        {
+            "id": "3NIopUsI4ik",
+            "title": "How to Build a Google Assistant App",
+            "href": "https://www.youtube.com/watch?v=3NIopUsI4ik",
+            "duration": " - Duration: 6 minutes, 51 seconds.",
+            "views": "4,782 views",
+            "active": true,
+            "watched": false
+        },
+        {
+            "id": "5ebKyxE5P0c",
+            "title": "Artificial Intelligence over Coffee with James McLurkin",
+            "href": "https://www.youtube.com/watch?v=5ebKyxE5P0c",
+            "duration": " - Duration: 11 minutes.",
+            "views": "3,102 views",
+            "active": true,
+            "watched": false
+        },
+        {
+            "id": "4BRET4zp01U",
+            "title": "Budapest | Google Developers Launchpad Build, by Design Terminal",
+            "href": "https://www.youtube.com/watch?v=4BRET4zp01U",
+            "duration": " - Duration: 2 minutes, 22 seconds.",
+            "views": "2,662 views",
+            "active": true,
+            "watched": false
+        },
+        {
+            "id": "rLWllZ_ce8A",
+            "title": "AdMob Mediation Groups Simplify Mediation - AdMob Quick Tip #2",
+            "href": "https://www.youtube.com/watch?v=rLWllZ_ce8A",
+            "duration": " - Duration: 65 seconds.",
+            "views": "797 views",
+            "active": true,
+            "watched": false
+        },
+        {
+            "id": "reb8Bi2sdmg",
+            "title": "Together with Google Developers - Google Community Program",
+            "href": "https://www.youtube.com/watch?v=reb8Bi2sdmg",
+            "duration": " - Duration: 105 seconds.",
+            "views": "4,880 views",
+            "active": true,
+            "watched": false
+        },
+        {
+            "id": "7Wfz719AJgQ",
+            "title": "The Developer Show (TL;DR 081)",
+            "href": "https://www.youtube.com/watch?v=7Wfz719AJgQ",
+            "duration": " - Duration: 2 minutes, 54 seconds.",
+            "views": "454 views",
+            "active": true,
+            "watched": false
+        },
+        {
+            "id": "2jgZg67zepc",
+            "title": "Learn about the Google Developers Agency Program over Coffee with Amit Chopra",
+            "href": "https://www.youtube.com/watch?v=2jgZg67zepc",
+            "duration": " - Duration: 10 minutes.",
+            "views": "915 views",
+            "active": true,
+            "watched": false
+        },
+        {
+            "id": "LDRbO9a6XPU",
+            "title": "Let’s Write a Decision Tree Classifier from Scratch: Machine Learning Recipes #8",
+            "href": "https://www.youtube.com/watch?v=LDRbO9a6XPU",
+            "duration": " - Duration: 9 minutes, 53 seconds.",
+            "views": "812 views",
+            "active": true,
+            "watched": false
+        },
+        {
+            "id": "hSX2koEIEi4",
+            "title": "AdMob & Analytics FTW - AdMob Quick Tip #1",
+            "href": "https://www.youtube.com/watch?v=hSX2koEIEi4",
+            "duration": " - Duration: 70 seconds.",
+            "views": "260 views",
+            "active": true,
+            "watched": false
+        },
+        {
+            "id": "bx88UI8o6Wg",
+            "title": "Google Developers Agency Spotlight Presents: Mutual Mobile",
+            "href": "https://www.youtube.com/watch?v=bx88UI8o6Wg",
+            "duration": " - Duration: 2 minutes, 21 seconds.",
+            "views": "78 views",
+            "active": true,
+            "watched": false
+        },
+        {
+            "id": "K-er6CT66w0",
+            "title": "GDD Europe ’17 Highlights",
+            "href": "https://www.youtube.com/watch?v=K-er6CT66w0",
+            "duration": " - Duration: 90 seconds.",
+            "views": "309 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "hzB1SdDvnq8",
+            "title": "Intro to DeepMind (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=hzB1SdDvnq8",
+            "duration": " - Duration: 21 minutes.",
+            "views": "424 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "KUOxJrRCzDY",
+            "title": "Learn about Firebase Events with PM Megan Krilanovich",
+            "href": "https://www.youtube.com/watch?v=KUOxJrRCzDY",
+            "duration": " - Duration: 6 minutes, 54 seconds.",
+            "views": "1,298 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "ZgaQn9coYfU",
+            "title": "Closing Keynote (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=ZgaQn9coYfU",
+            "duration": " - Duration: 37 minutes.",
+            "views": "1,864 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "8YxemdlSGts",
+            "title": "Modularizing Your App (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=8YxemdlSGts",
+            "duration": " - Duration: 23 minutes.",
+            "views": "1,310 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "Wec3jyZWloY",
+            "title": "App to 60 - Using Firebase on Your Existing App (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=Wec3jyZWloY",
+            "duration": " - Duration: 20 minutes.",
+            "views": "1,592 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "sTY_WeJtB5E",
+            "title": "Performance Tooling (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=sTY_WeJtB5E",
+            "duration": " - Duration: 24 minutes.",
+            "views": "2,514 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "qnI2S_9TN-8",
+            "title": "What's Next for the Web (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=qnI2S_9TN-8",
+            "duration": " - Duration: 24 minutes.",
+            "views": "1,203 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "rdXR78bvXts",
+            "title": "Developing Conversational Assistant Apps Using Actions on Google (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=rdXR78bvXts",
+            "duration": " - Duration: 25 minutes.",
+            "views": "498 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "kmIBB0CIAvs",
+            "title": "Google Developer Days Europe 2017 - Day 2 (Auditorium)",
+            "href": "https://www.youtube.com/watch?v=kmIBB0CIAvs",
+            "duration": " - Duration: 8 hours.",
+            "views": "1 day ago",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "ihvkBpTZ8P8",
+            "title": "Powering Your Apps with Location and Maps (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=ihvkBpTZ8P8",
+            "duration": " - Duration: 21 minutes.",
+            "views": "636 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "zuGE3eFQD9I",
+            "title": "Frameworks and Tools for Progressive Web Apps (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=zuGE3eFQD9I",
+            "duration": " - Duration: 30 minutes.",
+            "views": "1,166 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "Y4IxkNcHTEo",
+            "title": "Google Developer Days Europe 2017 - Day 2 (Theatre)",
+            "href": "https://www.youtube.com/watch?v=Y4IxkNcHTEo",
+            "duration": " - Duration: 5 hours.",
+            "views": "1 day ago",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "mhYJ1AX4dG4",
+            "title": "Containers, Kubernetes, and Google Cloud (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=mhYJ1AX4dG4",
+            "duration": " - Duration: 30 minutes.",
+            "views": "527 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "4PAfMGEI9Hk",
+            "title": "Panel on Voice UI: What's all the Noise About? (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=4PAfMGEI9Hk",
+            "duration": " - Duration: 30 minutes.",
+            "views": "617 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "r0zCs2b_ReY",
+            "title": "Fundamentals of Google Cloud Platform: A Guided Tour (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=r0zCs2b_ReY",
+            "duration": " - Duration: 35 minutes.",
+            "views": "514 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "IhSLVr4QNGs",
+            "title": "Boosting Performance Through App Quality Improvements (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=IhSLVr4QNGs",
+            "duration": " - Duration: 30 minutes.",
+            "views": "979 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "2zWSr-3gkWY",
+            "title": "Machine Learning with TensorFlow (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=2zWSr-3gkWY",
+            "duration": " - Duration: 32 minutes.",
+            "views": "11,201 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "Ts-uxYiBEQ8",
+            "title": "Architecture Components (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=Ts-uxYiBEQ8",
+            "duration": " - Duration: 20 minutes.",
+            "views": "3,625 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "rNux9AnNCVE",
+            "title": "Day 2 Keynote (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=rNux9AnNCVE",
+            "duration": " - Duration: 58 minutes.",
+            "views": "8,178 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "7kcDL5BDe0s",
+            "title": "Google Cloud IoT Core Technical Deep Dive (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=7kcDL5BDe0s",
+            "duration": " - Duration: 25 minutes.",
+            "views": "298 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "rFbcOGuDMPk",
+            "title": "Introducing ARCore: Augmented Reality at Android Scale (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=rFbcOGuDMPk",
+            "duration": " - Duration: 21 minutes.",
+            "views": "6,087 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "WmGfr3vK_g4",
+            "title": "Diving into O and the Support Library (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=WmGfr3vK_g4",
+            "duration": " - Duration: 30 minutes.",
+            "views": "1,663 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "tk_Eq1apGGk",
+            "title": "Android Wear, TV, Auto & Media: Technical Lightning talks! (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=tk_Eq1apGGk",
+            "duration": " - Duration: 33 minutes.",
+            "views": "430 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "hJtTdunppn4",
+            "title": "ML API's by Example (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=hJtTdunppn4",
+            "duration": " - Duration: 32 minutes.",
+            "views": "1,524 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "prlK_QL_qOA",
+            "title": "In Record Time: How we Quickly Built a Serverless app with Firebase and Flutter (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=prlK_QL_qOA",
+            "duration": " - Duration: 28 minutes.",
+            "views": "2,928 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "MOHVrrEAQZE",
+            "title": "Building for Android O (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=MOHVrrEAQZE",
+            "duration": " - Duration: 42 minutes.",
+            "views": "3,117 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "WcJkoRNbfv0",
+            "title": "Google Developer Days Europe 2017 - Day 1 (Auditorium)",
+            "href": "https://www.youtube.com/watch?v=WcJkoRNbfv0",
+            "duration": " - Duration: 7 hours.",
+            "views": "2 days ago",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "Y3M9NjUGL7c",
+            "title": "PWA + AMP = Easy for Users and Developers Alike (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=Y3M9NjUGL7c",
+            "duration": " - Duration: 28 minutes.",
+            "views": "1,224 views",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "E0Ab09yf0sA",
+            "title": "Google Developer Days Europe 2017 - Day 1 (Theatre)",
+            "href": "https://www.youtube.com/watch?v=E0Ab09yf0sA",
+            "duration": " - Duration: 5 hours.",
+            "views": "2 days ago",
+            "active": false,
+            "watched": false
+        },
+        {
+            "id": "Fnwj9VjE_BY",
+            "title": "What can I do with Cloud Functions for Firebase? All the Things (GDD Europe '17)",
+            "href": "https://www.youtube.com/watch?v=Fnwj9VjE_BY",
+            "duration": " - Duration: 24 minutes.",
+            "views": "2,937 views",
+            "active": false,
+            "watched": false
+        }
+    ]
+}

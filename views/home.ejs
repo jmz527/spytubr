@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+
+	<!-- Basic Page Needs
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title><%= title %></title>
+
+	<!-- FONTS
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+		<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+
+	<!-- FAVICONS
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+		<!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
+
+	<!-- CSS
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+		<link rel="stylesheet" href="/styles/spectre.min.css">
+		<link rel='stylesheet' href='/styles/main.css' />
+
+	<!-- Primary Page Layout
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	</head>
+
+
+	<!-- HEADER
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<body id="home">
+
+		<header>
+			<h1><%= title %></h1>
+		</header>
+
+
+		<!-- MAIN
+		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+		<main class="container">
+
+			<div class="divider"></div>
+
+			<div class="routes-wrap columns">
+				
+				<% for (key in routes) { %>
+
+				<div class="routes column col-xs-12 col-md-6 col-lg-3">
+
+					<h3><a href="/<%= key %>">/<%= key %></a></h3>
+
+					<ul class="routes-list">
+
+						<% for (var i = 0; i < routes[key].length; i++) { %>
+
+							<li class="route-item"><a href="<%= routes[key][i] %>"><%= routes[key][i] %></a></li>
+
+						<% } %>
+
+					</ul>
+
+				</div>
+
+				<% } %>
+
+			</div>
+
+			<div class="divider"></div>
+
+		</main>
+
+		<!-- FOOTER
+		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+		<footer>
+			<a class="root" href="/">Back to root</a>
+		</footer>
+
+
+		<!-- SCRIPTS
+		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+		<script src="/scripts/jquery.min.js"></script>
+		<script>
+
+			$(document).ready(function() {
+
+				// console.log('yo')
+
+			})
+
+		</script>
+
+
+	</body>
+
+<!-- End Document
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</html>
