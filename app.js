@@ -7,7 +7,7 @@ const bodyParser = require(`body-parser`)
 
 /* This will allow db to run your api smoothly but it won't break other execution environment */
 const host = process.env.HOST || `localhost`
-const port = process.env.PORT || process.argv[2] || 3000
+const port = process.env.PORT || process.argv[2] || 1337
 
 const routes = require(`./routes`)
 const yts_routes = require(`./yts/routes`)

@@ -5,10 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
-    "serve": "nodemon api_server.js",
     "spydr": "./bin/.spydr.bash",
     "fetch": "./bin/.fetch_all.bash",
-    "deep_fetch": "./bin/.fetch_deep.bash",
     "beautify": "./bin/.beautify_all.bash",
     "match": "./bin/.match_all.bash",
     "purge": "./bin/.purge_all.bash",
