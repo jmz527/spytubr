@@ -11,6 +11,7 @@ const port = process.env.PORT || process.argv[2] || 3000
 
 const routes = require(`./routes`)
 const yts_routes = require(`./yts/routes`)
+const api_routes = require(`./yts/api_routes`)
 
 app.set(`views`, path.join(__dirname, `views`))
 app.set(`yts`, path.join(__dirname, `yts`))
@@ -23,6 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // Setting routes
 app.use(`/`, routes)
 app.use(`/yts`, yts_routes)
+app.use(`/api`, api_routes)
 
 app.use(express.static(path.join(__dirname, `views/assets`)))
 

@@ -5,8 +5,8 @@ module.exports = (function() {
 	`use strict`;
 
 	const router = express.Router()
-				router.use(bodyParser.json()) // support json encoded bodies
-				router.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies
+		router.use(bodyParser.json()) // support json encoded bodies
+		router.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies
 
 // ROUTES
 // -------------------------------------------------------------- //
