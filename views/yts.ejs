@@ -71,7 +71,7 @@
 					idx = parseInt(e.target.getAttribute('data-index'));
 
 					$.ajax({
-						url: "http://localhost:1337/yts/<%= channel %>/active/"+idx,
+						url: "http://localhost:3000/api/<%= channel %>/active/"+idx,
 						dataType: 'jsonp',
 						context: document.body
 					}).done((res) => (res.status === 200)? activeDOMSwitch(e) : alert("ERROR: Refresh Page") );
@@ -81,7 +81,7 @@
 					idx = parseInt(e.target.getAttribute('data-index'));
 
 					$.ajax({
-						url: "http://localhost:1337/yts/<%= channel %>/watched/"+idx,
+						url: "http://localhost:3000/api/<%= channel %>/watched/"+idx,
 						dataType: 'jsonp',
 						context: document.body
 					}).done((res) => (res.status === 200)? watchedDOMSwitch(e) : alert("ERROR: Refresh Page") );
