@@ -43,4 +43,3 @@ node "${PWD}"/util/file_util_interface.js beautify "${PWD}"/htmls/yts_fun_fun_fu
 node "${PWD}"/util/file_util_interface.js beautify "${PWD}"/htmls/yts_google_dev.html
 node "${PWD}"/util/file_util_interface.js beautify "${PWD}"/htmls/yts_google_tech_talks.html
 node "${PWD}"/util/file_util_interface.js beautify "${PWD}"/htmls/yts_netflix_ui.html
-

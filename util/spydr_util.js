@@ -1,4 +1,5 @@
 const fs = require(`fs`)
+var file_util = require("./file_util");
 
 const methods = (function() {
 	return {
@@ -14,6 +15,13 @@ const methods = (function() {
 				return require(`../${file_path}`)
 			}
 
+		},
+		addRoute: (file_name) => {
+			file_util.methods.readJSON("../yts/routes", function (routes) { // console.log(routes)
+				routes.yts.push(`/yts/${file_name}`)
+
+				file_util.methods.saveJSON("../yts/routes", routes)
+			});
 		}
 	}
 }());
