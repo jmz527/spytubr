@@ -7,7 +7,7 @@ Offshoot of my Spydr application - scrapes youtube and serves the data within a 
 
 # Technologies Used:
 
-NodeJS + Cheerio + HTML-Minifier + JS-Beautify + Request + Express + EJS + SQLite3 + jQuery + SpectreCSS + Mocha + Chai
+NodeJS + Cheerio + HTML-Minifier + JS-Beautify + Request + Express + EJS + SQLite3 + jQuery + SpectreCSS + Mocha + Chai + StandardJS
 
 # Installation Instructions:
 
@@ -23,13 +23,14 @@ After that's done, you're ready to go!
 
 # Commands:
 
-* `yarn run spydr`       :       this will fetch all, match, and merge
+* `yarn run tubr`        :       this will fetch all, match, and merge
 * `yarn run start`       :       this will start up the application
 * `yarn run fetch`       :       this will fetch all
 * `yarn run match`    	 :       this will cross-reference the new w/ the old
 * `yarn run beautify`    :       this will minify then beautify the html files
 * `yarn run purge`       :       this will delete all feeds & htmls
 * `yarn run test`        :       this will run the mocha testing framework
+* `yarn run lint`        :       this will run standard's linter
 
 # Directory Tree:
 
