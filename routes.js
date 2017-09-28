@@ -12,7 +12,7 @@ let all_routes = {
 // MAIN ROUTES
 // --------------------------------------------------------------------------//
 router.get('/', function (req, res) { // landing page
-  res.render('home', { title: 'spydr', routes: all_routes })
+  res.render('home', { title: 'tubr', routes: all_routes })
 })
 
 router.get('/root', (req, res) => { res.redirect('/') })
