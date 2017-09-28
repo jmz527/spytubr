@@ -1,6 +1,6 @@
 // $(document).ready(function() {
 // 	let vWraps, aBtns, wBtns, cBtns, idx, selected;
-// 		vWraps = document.getElementsByClassName('vid-wrap'); 
+// 		vWraps = document.getElementsByClassName('vid-wrap');
 // 		aBtns = document.getElementsByClassName('active-btn');
 // 		wBtns = document.getElementsByClassName('watched-btn');
 // 		cBtns = document.getElementsByClassName('check-btn');
@@ -46,7 +46,6 @@
 // 			watchedDOMSwitch(e);
 // 		});
 // 	}
-
 
 // 	// Active DOM manipulation stuff
 // 	function activeDOMSwitch(e) {

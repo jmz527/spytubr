@@ -1,6 +1,5 @@
 const chai = require(`chai`)
 
-
 // YTS JSON & HTML FILES
 // =========================================================== //
 // const yts_json = require(`../feeds/yts_daily_show.json`);
@@ -19,7 +18,7 @@ const chai = require(`chai`)
 // 		chai.expect(yts_json.channel).to.equal(`daily_show`)
 
 // 		chai.expect(yts_json.channel_id).to.be.a(`string`)
-// 		chai.expect(yts_json.channel_id).to.equal(`UCwWhs_6x42TyRM4Wstoq8HA`) 
+// 		chai.expect(yts_json.channel_id).to.equal(`UCwWhs_6x42TyRM4Wstoq8HA`)
 
 // 		chai.expect(yts_json.data).to.be.a(`array`)
 
@@ -49,7 +48,7 @@ const chai = require(`chai`)
 // 		chai.expect(yts_all_json.channel).to.equal(`daily_show`)
 
 // 		chai.expect(yts_all_json.channel_id).to.be.a(`string`)
-// 		chai.expect(yts_all_json.channel_id).to.equal(`UCwWhs_6x42TyRM4Wstoq8HA`) 
+// 		chai.expect(yts_all_json.channel_id).to.equal(`UCwWhs_6x42TyRM4Wstoq8HA`)
 
 // 		chai.expect(yts_all_json.data).to.be.a(`array`)
 
@@ -73,4 +72,3 @@ const chai = require(`chai`)
 // 	});
 
 // })
-

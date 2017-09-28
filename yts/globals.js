@@ -1,3 +1,3 @@
-const URL = `https://www.youtube.com`;
+const URL = `https://www.youtube.com`
 
-exports.URL = URL;
+exports.URL = URL

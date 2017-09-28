@@ -1,29 +1,26 @@
 const fs = require(`fs`)
-var file_util = require("./file_util");
+var file_util = require('./file_util')
 
-const methods = (function() {
-	return {
-		matches: (arg1, arg2) => { return arg1 == arg2 },
-		checkForAllFile: (file_path, fresh_obj) => { // If "all" file doesn't exist, create it
+const methods = (function () {
+  return {
+    matches: (arg1, arg2) => { return arg1 == arg2 },
+    checkForAllFile: (file_path, fresh_obj) => { // If "all" file doesn't exist, create it
+      if (!fs.existsSync(`./${file_path}`)) {
+        console.log(`${file_path} file not found`)
 
-			if (!fs.existsSync(`./${file_path}`)) { console.log(`${file_path} file not found`)
+        return fresh_obj
+      } else {
+        return require(`../${file_path}`)
+      }
+    },
+    addRoute: (file_name) => {
+      file_util.methods.readJSON('../yts/routes', function (routes) { // console.log(routes)
+        routes.yts.push(`/yts/${file_name}`)
 
-				return fresh_obj
+        file_util.methods.saveJSON('../yts/routes', routes)
+      })
+    }
+  }
+}())
 
-			} else {
-
-				return require(`../${file_path}`)
-			}
-
-		},
-		addRoute: (file_name) => {
-			file_util.methods.readJSON("../yts/routes", function (routes) { // console.log(routes)
-				routes.yts.push(`/yts/${file_name}`)
-
-				file_util.methods.saveJSON("../yts/routes", routes)
-			});
-		}
-	}
-}());
-
-exports.methods = methods;
+exports.methods = methods
