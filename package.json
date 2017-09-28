@@ -1,11 +1,12 @@
 {
-  "name": "spydr",
+  "name": "tubr",
   "version": "1.0.0",
   "description": "basic web crawler",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
-    "spydr": "./bin/.spydr.bash",
+    "tubr": "./bin/.tubr.bash",
+    "add": "./.add_new.bash",
     "fetch": "./bin/.fetch_all.bash",
     "beautify": "./bin/.beautify_all.bash",
     "match": "./bin/.match_all.bash",
@@ -14,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jmz527/spydr.git"
+    "url": "git+https://github.com/jmz527/tubr.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jmz527/spydr/issues"
+    "url": "https://github.com/jmz527/tubr/issues"
   },
-  "homepage": "https://github.com/jmz527/spydr#readme",
+  "homepage": "https://github.com/jmz527/tubr#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
     "cheerio": "^0.22.0",
