@@ -1,5 +1,4 @@
 const fs = require('fs')
-// const cp = require(`child_process`)
 const chai = require(`chai`)
 
 const main_util = require(`../util/main_util`)
@@ -37,60 +36,60 @@ describe(`Main utility library`, () => {
 
 
 
-// FILE UTIL LIBRARY
-// =========================================================== //
-const htmlMin = `<!DOCTYPE html><html><body><h1>My First Heading</h1><p>My first paragraph.</p></body></html>`;
+// // FILE UTIL LIBRARY
+// // =========================================================== //
+// const htmlMin = `<!DOCTYPE html><html><body><h1>My First Heading</h1><p>My first paragraph.</p></body></html>`;
 
-describe(`File utility library`, () => {
+// describe(`File utility library`, () => {
 
-	it(`minifyHTML minifies html`, () => {
+// 	it(`minifyHTML minifies html`, () => {
 
-		file_util.methods.minifyHTML(`../htmls/test_beauty.html`)
+// 		file_util.methods.minifyHTML(`../htmls/test_beauty.html`)
 
-		fs.readFile(`../htmls/test_beauty.html`, 'utf8', function (err, html) {
-			if (err) throw err;
+// 		fs.readFile(`../htmls/test_beauty.html`, 'utf8', function (err, html) {
+// 			if (err) throw err;
 
-			chai.assert.equal(html, htmlMin)
+// 			chai.assert.equal(html, htmlMin)
 
-		})
+// 		})
 
-	});
+// 	});
 
-	it(`beautifyHTML beautifies html`, () => {
+// 	it(`beautifyHTML beautifies html`, () => {
 
-		file_util.methods.beautifyHTML(`../htmls/test_mini.html`)
+// 		file_util.methods.beautifyHTML(`../htmls/test_mini.html`)
 
-		fs.readFile(`../htmls/test_mini.html`, 'utf8', function (err, html) {
-			if (err) throw err;
+// 		fs.readFile(`../htmls/test_mini.html`, 'utf8', function (err, html) {
+// 			if (err) throw err;
 
-			chai.assert.equal(html, htmlOG)
+// 			chai.assert.equal(html, htmlOG)
 
-		})
+// 		})
 
-	});
+// 	});
 
 
-	it(`saveHTML saves html to a file properly`, () => {
+// 	it(`saveHTML saves html to a file properly`, () => {
 
-		// file_util.methods.saveHTML()
+// 		// file_util.methods.saveHTML()
 
-		chai.assert.lengthOf(`tri`, 3);
-	})
+// 		chai.assert.lengthOf(`tri`, 3);
+// 	})
 
-	it(`saveJSON saves json to a file properly`, () => {
+// 	it(`saveJSON saves json to a file properly`, () => {
 
-		// file_util.methods.saveJSON()
+// 		// file_util.methods.saveJSON()
 
-		chai.assert.lengthOf(`tri`, 3);
-	})
+// 		chai.assert.lengthOf(`tri`, 3);
+// 	})
 
-	it(`readJSON reads json from a file properly`, () => {
+// 	it(`readJSON reads json from a file properly`, () => {
 
-		file_util.methods.readJSON(`yts_daily_show`, (json) => {
+// 		file_util.methods.readJSON(`yts_daily_show`, (json) => {
 
-			chai.expect(json).to.be.a(`object`)
-		})
+// 			chai.expect(json).to.be.a(`object`)
+// 		})
 
-	})
+// 	})
 
-});
+// });
