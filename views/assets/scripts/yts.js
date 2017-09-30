@@ -1,50 +1,47 @@
+
 $(document).ready(function() {
-	let vWraps, aBtns, wBtns, cBtns, idx, selected;
-		vWraps = document.getElementsByClassName('vid-wrap');
-		aBtns = document.getElementsByClassName('active-btn');
-		wBtns = document.getElementsByClassName('watched-btn');
-		cBtns = document.getElementsByClassName('check-btn');
 
-	for (var i = 0; i < aBtns.length; i++) { // console.log(aBtns[i]);
-		aBtns[i].addEventListener('click', activeBtnListener, false);
-	}
+	// EVENT HANDLING
+	// -------------------------------------------------------------- //
+	let vWraps = document.getElementsByClassName('vid-wrap'); 
 
-	for (var i = 0; i < wBtns.length; i++) { // console.log(wBtns[i]);
-		wBtns[i].addEventListener('click', watchedBtnListener, false);
-	}
+	document.getElementById('list').addEventListener('click', function(e) {
 
-	for (var i = 0; i < cBtns.length; i++) { // console.log(cBtns[i]);
-		cBtns[i].addEventListener('click', bothBtnListener, false);
-	}
+		if (e.target && e.target.nodeName == "BUTTON") {
 
+			let watchedBtn, activeBtn;
+				watchedBtn = $(e.target).hasClass('watched-btn')
+				activeBtn = $(e.target).hasClass('active-btn')
+
+			if (watchedBtn && !activeBtn) {
+				watchedBtnListener(e)
+			} else if (!watchedBtn && activeBtn) {
+				activeBtnListener(e)
+			}
+
+		}
+
+	})
+
+	// AJAX STUFF
 	function activeBtnListener(e) {
 		idx = parseInt(e.target.getAttribute('data-index'));
 
 		$.ajax({
-			url: "http://localhost:3000/yts/<%= channel %>/active/"+idx,
+			url: "http://localhost:1337/api/<%= channel %>/active/"+idx,
+			dataType: 'jsonp',
 			context: document.body
-		}).done(() => activeDOMSwitch(e));
+		}).done((res) => (res.status === 200)? activeDOMSwitch(e) : alert("ERROR: Refresh Page") );
 	}
 
 	function watchedBtnListener(e) {
 		idx = parseInt(e.target.getAttribute('data-index'));
 
 		$.ajax({
-			url: "http://localhost:3000/yts/<%= channel %>/watched/"+idx,
+			url: "http://localhost:1337/api/<%= channel %>/watched/"+idx,
+			dataType: 'jsonp',
 			context: document.body
-		}).done(() => watchedDOMSwitch(e));
-	}
-
-	function bothBtnListener(e) {
-		idx = parseInt(e.target.getAttribute('data-index'));
-
-		$.ajax({
-			url: "http://localhost:3000/yts/<%= channel %>/check/"+idx,
-			context: document.body
-		}).done(() => {
-			activeDOMSwitch(e);
-			watchedDOMSwitch(e);
-		});
+		}).done((res) => (res.status === 200)? watchedDOMSwitch(e) : alert("ERROR: Refresh Page") );
 	}
 
 	// Active DOM manipulation stuff
@@ -55,14 +52,14 @@ $(document).ready(function() {
 		if ($(selected).hasClass('active') && !$(selected).hasClass('empty')) {
 			$(selected).removeClass('active')
 			$(e.target).removeClass('active-btn-true').addClass('active-btn-false').html("false");
+
 		} else if (!$(selected).hasClass('active') && !$(selected).hasClass('empty')) {
 			$(selected).addClass('active')
 			$(e.target).removeClass('active-btn-false').addClass('active-btn-true').html("true");
+
 		} else if (!$(selected).hasClass('active') && $(selected).hasClass('empty')) {
 			$(selected).removeClass('empty').addClass('active')
 			$(e.target).removeClass('active-btn-false').addClass('active-btn-true').html("true");
-
-			// TODO: Append iframe to DOM and load video
 
 		}
 

@@ -89,7 +89,7 @@ const methods = (function () {
         console.log('\x1b[32m%s\x1b[0m', 'Adding ' + newItems.length + ' new items to "yts_' + file_name + '_all.json" file')
         new_json.data = newItems.concat(all.data) // add the new items
         file_util.methods.saveJSON('yts_' + file_name + '_all', new_json) // SAVE JSON
-      } else if (newItems.length == 0) {
+      } else if (newItems.length === 0) {
         console.log('\u001B[31m%s\u001B[0m', 'No new items for ' + file_name + ' feed')
       }
       return new_json
@@ -98,11 +98,11 @@ const methods = (function () {
     // =========================================================== //
     mark_active: function (file_name, index, bool) {
       file_util.methods.readJSON('yts_' + file_name + '_all', function (new_json) {
-        if (index == 'all') {
+        if (index === 'all') {
           new_json.data.forEach(function (item) { return item.active = typeof bool === 'boolean' ? bool : !item.active })
-        } else if (index == 'all_watched') {
+        } else if (index === 'all_watched') {
           new_json.data.forEach(function (item) { return item.active = (item.watched) ? bool : item.active })
-        } else if (index == 'all_unwatched') {
+        } else if (index === 'all_unwatched') {
           new_json.data.forEach(function (item) { return item.active = (!item.watched) ? bool : item.active })
         } else {
           new_json.data[index].active = bool || !new_json.data[index].active
@@ -116,11 +116,11 @@ const methods = (function () {
     // =========================================================== //
     mark_watched: function (file_name, index, bool) {
       file_util.methods.readJSON('yts_' + file_name + '_all', function (new_json) {
-        if (index == 'all') {
+        if (index === 'all') {
           new_json.data.forEach(function (item) { return item.watched = typeof bool === 'boolean' ? bool : !item.watched })
-        } else if (index == 'all_active') {
+        } else if (index === 'all_active') {
           new_json.data.forEach(function (item) { return item.watched = (item.active) ? bool : item.watched })
-        } else if (index == 'all_inactive') {
+        } else if (index === 'all_inactive') {
           new_json.data.forEach(function (item) { return item.watched = (!item.active) ? bool : item.watched })
         } else {
           new_json.data[index].watched = !new_json.data[index].watched
