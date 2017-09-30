@@ -29,8 +29,8 @@ After that's done, you're ready to go!
 * `yarn run match`    	 :       this will cross-reference the new w/ the old
 * `yarn run beautify`    :       this will minify then beautify the html files
 * `yarn run purge`       :       this will delete all feeds & htmls
+* `yarn run setup`       :       this will setup the application
 * `yarn run test`        :       this will run the mocha testing framework
-* `yarn run lint`        :       this will run standard's linter
 
 # Directory Tree:
 

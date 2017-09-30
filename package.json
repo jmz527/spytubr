@@ -11,8 +11,8 @@
     "beautify": "./bin/.beautify_all.bash",
     "match": "./bin/.match_all.bash",
     "purge": "./bin/.purge_all.bash",
-    "test": "node_modules/.bin/mocha",
-    "lint": "standard"
+    "setup": "./bin/.setup.bash",
+    "test": "node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
