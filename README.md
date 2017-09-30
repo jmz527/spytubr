@@ -19,7 +19,45 @@ cd tubr/
 yarn
 ```
 
-After that's done, you're ready to go!
+And then
+
+```sh
+yarn run setup
+```
+
+Which sets up a few bash scripts in the bin
+
+To add a channel follow these steps:
+
+First, find the channel id off YouTube. It should look something like this: `UCsXVk37bltHxD1rDPwtNM8Q`
+
+Easiest way to find this channel id is to visit the channel you want to subscribe to, click on a video, then click the link back to the channel's page below the video. Now the channel id shows up in the url bar.
+
+Once you have that channel id copied, run the `yarn run add` command followed by the id and the name you desire to give it, like so:
+
+```sh
+yarn run add UCsXVk37bltHxD1rDPwtNM8Q kurzgesagt
+```
+
+Now you're ready to scrape! Run the main routine:
+
+```sh
+yarn run tubr
+```
+
+Then spin up the server:
+```sh
+yarn run start
+```
+
+or
+
+```sh
+node app.js
+```
+
+And navigate to [http://localhost:1337](http://localhost:1337), select your channel, and enjoy!
+
 
 # Commands:
 
