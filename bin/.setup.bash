@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 mkdir feeds htmls
 
-cp "./test/feeds/flat_json_tester.json" ./feeds/.
-cp "./test/feeds/json_tester.json" ./feeds/.
-cp "./test/feeds/routes.json" .
+cp "${PWD}"/test/feeds/flat_json_tester.json "${PWD}"/feeds/.
+cp "${PWD}"/test/feeds/json_tester.json "${PWD}"/feeds/.
+cp "${PWD}"/test/feeds/routes.json "${PWD}"
 
-cp "./test/htmls/html_min.html" ./htmls/.
-cp "./test/htmls/test.html" ./htmls/.
-cp "./test/htmls/test_beauty.html" ./htmls/.
-cp "./test/htmls/test_original.html" ./htmls/.
+cp "${PWD}"/test/htmls/html_min.html "${PWD}"/htmls/.
+cp "${PWD}"/test/htmls/test.html "${PWD}"/htmls/.
+cp "${PWD}"/test/htmls/test_beauty.html "${PWD}"/htmls/.
+cp "${PWD}"/test/htmls/test_original.html "${PWD}"/htmls/.
 
-cp "${PWD}"/bin/.beautify_all.bash /bin/.
-cp "${PWD}"/bin/.fetch_yts.bash /bin/.
-cp "${PWD}"/bin/.match_all.bash /bin/.
+cp "${PWD}"/test/bin/.beautify_all.bash "${PWD}"/bin/.beautify_all.bash
+cp "${PWD}"/test/bin/.fetch_yts.bash "${PWD}"/bin/.fetch_yts.bash
+cp "${PWD}"/test/bin/.match_all.bash "${PWD}"/bin/.match_all.bash
