@@ -1,5 +1,5 @@
 const fs = require('fs')
-const cp = require(`child_process`)
+// const cp = require(`child_process`)
 const chai = require(`chai`)
 
 const mainUtil = require(`../util/main_util`)
@@ -52,7 +52,7 @@ describe(`Main utility library`, () => {
   })
 
   it(`unflattenJSON unflattens json`, () => {
-    fileUtil.methods.readJSON(`flatJSON_tester`, (flatJSON) => {
+    fileUtil.methods.readJSON(`flat_json_tester`, (flatJSON) => {
       let json = mainUtil.methods.unflattenJSON(flatJSON)
 
       chai.expect(json).to.be.a(`object`)
@@ -74,10 +74,11 @@ describe(`Main utility library`, () => {
 // =========================================================== //
 const htmlMin = `<!DOCTYPE html><html><body><h1>My First Heading</h1><p>My first paragraph.</p></body></html>`
 
-fileUtil.methods.saveHTML(`saveHTML_test`, htmlMin)
-fileUtil.methods.saveJSON(`saveJSON_test`, { test: `JSON` })
-
 describe(`File utility library`, () => {
+
+  fileUtil.methods.saveHTML(`saveHTML_test`, htmlMin)
+  fileUtil.methods.saveJSON(`saveJSON_test`, { test: `JSON` })
+
   it(`Html test files exist`, () => {
     chai.expect(fs.existsSync(`./htmls/html_min.html`)).to.be.true
     chai.expect(fs.existsSync(`./htmls/test.html`)).to.be.true
@@ -103,9 +104,10 @@ describe(`File utility library`, () => {
       chai.expect(json.test).to.be.a(`string`)
     })
   })
-})
 
-setTimout(() => {
-  cp.exec(`rm ./htmls/saveHTML_test.html`)
-  cp.exec(`rm ./feeds/saveJSON_test.json`)
-}, 5000)
+  // // Why doesn't this work? vvvv
+  // setTimeout(() => {
+  //   cp.exec(`rm ./htmls/saveHTML_test.html`)
+  //   cp.exec(`rm ./feeds/saveJSON_test.json`)
+  // }, 5000)
+})
