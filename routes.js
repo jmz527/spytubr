@@ -4,22 +4,17 @@ const cp = require(`child_process`)
 
 // HELPER VARS
 // --------------------------------------------------------------------------//
-var router = express.Router()
-	router.use(bodyParser.json()) // support json encoded bodies
-	router.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies
-var routes = require(`./routes.json`)
-var genUUID = require(`./util/main_util`).methods.genUUID
-
-let all_routes = {
-  'yts': routes.yts
-}
+const router = express.Router()
+	  router.use(bodyParser.json()) // support json encoded bodies
+	  router.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies
+const genUUID = require(`./util/main_util`).methods.genUUID
+const routes = require(`./routes.json`)
 
 // MAIN ROUTES
 // --------------------------------------------------------------------------//
 router.get('/', function (req, res) { // landing page
-  res.render('home', { title: 'tubr', routes: all_routes })
+  res.render('home', { title: 'tubr', routes: routes })
 })
-
 router.get('/root', (req, res) => { res.redirect('/') })
 router.get('/main', (req, res) => { res.redirect('/') })
 
@@ -28,7 +23,7 @@ router.get(`/yts/`, function (req, res) { // landing page
 })
 
 router.get(`/yts/:channel`, (req, res) => {
-  let yts = require(`./feeds/yts_` + req.params.channel + `_all.json`)
+  let yts = require(`./feeds/yts_${req.params.channel}_all.json`)
 
   res.render(`yts`, { title: `yts`, channel: req.params.channel, yts: yts.data })
 })

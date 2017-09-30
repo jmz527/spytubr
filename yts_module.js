@@ -3,7 +3,7 @@ const request = require('request')
 const cheerio = require('cheerio')
 const cp = require(`child_process`)
 const file_util = require('./util/file_util')
-const spydr_util = require('./util/spydr_util')
+const tubr_util = require('./util/tubr_util')
 const globals = require('./globals')
 const methods = (function () {
   return {
@@ -13,10 +13,8 @@ const methods = (function () {
       cp.exec(`./.add_route.bash ${channelID} ${file_name}`, (err, stdout, stderr) => { // console.log(stdout)
         if (err) throw err
       })
-
       file_util.methods.readJSON('../routes', function (routes) { // console.log(routes)
         routes.yts.push(`/yts/${file_name}`)
-
         file_util.methods.saveJSON('../routes', routes)
       })
     },
@@ -73,12 +71,12 @@ const methods = (function () {
     match_feeds: function (file_name, feed) {
       var new_json, all, dict = {}, newItems = []
       new_json = { channel: file_name, channel_id: feed.channel_id, data: [] }
-      all = spydr_util.methods.checkForAllFile('./feeds/yts_' + file_name + '_all.json', new_json)
+      all = tubr_util.methods.checkForAllFile('./feeds/yts_' + file_name + '_all.json', new_json)
             // populate the dict
       feed.data.forEach(function (item) { return dict[item.id] = { match: null, item: item } })
             // within dict loop, check if "feed" ids match with any "all" ids
       for (key in dict) {
-        dict[key].match = all.data.some(function (item) { return spydr_util.methods.matches(key, item.id) })
+        dict[key].match = all.data.some(function (item) { return tubr_util.methods.matches(key, item.id) })
       }
       for (key in dict) {
                 // add new attrs
