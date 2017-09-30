@@ -30,7 +30,7 @@ const methods = (function () {
           case '\\':
           case '%':
             return '\\' + char // prepends a backslash to backslash, percent,
-                      // and double/single quotes
+                              // and double/single quotes
         }
       })
     },

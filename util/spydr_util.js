@@ -14,10 +14,10 @@ const methods = (function () {
       }
     },
     addRoute: (file_name) => {
-      file_util.methods.readJSON('../yts/routes', function (routes) { // console.log(routes)
+      file_util.methods.readJSON('../routes', function (routes) { // console.log(routes)
         routes.yts.push(`/yts/${file_name}`)
 
-        file_util.methods.saveJSON('../yts/routes', routes)
+        file_util.methods.saveJSON('../routes', routes)
       })
     }
   }

@@ -1,8 +1,8 @@
 var fs = require('fs')
 var request = require('request')
 var cheerio = require('cheerio')
-var file_util = require('../util/file_util')
-var spydr_util = require('../util/spydr_util')
+var file_util = require('./util/file_util')
+var spydr_util = require('./util/spydr_util')
 var globals = require('./globals')
 var methods = (function () {
   return {
@@ -36,7 +36,7 @@ var methods = (function () {
             obj = {
               id: links[i].attribs.href.split('=')[1],
               title: links[i].attribs.title,
-              href: 'https://www.youtube.com' + links[i].attribs.href,
+              href: globals.URL + links[i].attribs.href,
               duration: links[i].next.children[0].data,
               views: metas[i].children[0].children[0].data
             }
@@ -59,7 +59,7 @@ var methods = (function () {
     match_feeds: function (file_name, feed) {
       var new_json, all, dict = {}, newItems = []
       new_json = { channel: file_name, channel_id: feed.channel_id, data: [] }
-      all = spydr_util.methods.checkForAllFile('/feeds/yts_' + file_name + '_all.json', new_json)
+      all = spydr_util.methods.checkForAllFile('./feeds/yts_' + file_name + '_all.json', new_json)
             // populate the dict
       feed.data.forEach(function (item) { return dict[item.id] = { match: null, item: item } })
             // within dict loop, check if "feed" ids match with any "all" ids
