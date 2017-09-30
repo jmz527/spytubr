@@ -36,9 +36,8 @@ describe(`Main utility library`, () => {
   })
 
   it(`flattenJSON flattens json`, () => {
-
     file_util.methods.readJSON(`json_tester`, (json) => {
-      let flat_json = main_util.methods.flattenJSON(json);
+      let flat_json = main_util.methods.flattenJSON(json)
 
       chai.expect(flat_json).to.be.a(`object`)
       chai.expect(flat_json).to.have.property(`user`)
@@ -48,15 +47,12 @@ describe(`Main utility library`, () => {
       chai.expect(flat_json[`user`]).to.be.a(`string`)
       chai.expect(flat_json[`upvoted.data[0].id`]).to.be.a(`string`)
       chai.expect(flat_json[`upvoted.data[0].fullname`]).to.be.a(`string`)
-
     })
-
   })
 
   it(`unflattenJSON unflattens json`, () => {
-
     file_util.methods.readJSON(`flat_json_tester`, (flat_json) => {
-      let json = main_util.methods.unflattenJSON(flat_json);
+      let json = main_util.methods.unflattenJSON(flat_json)
 
       chai.expect(json).to.be.a(`object`)
       chai.expect(json).to.have.property(`user`)
@@ -69,13 +65,9 @@ describe(`Main utility library`, () => {
       chai.expect(json.upvoted.data).to.be.a(`array`)
       chai.expect(json.upvoted.data[0].id).to.be.a(`string`)
       chai.expect(json.upvoted.data[0].fullname).to.be.a(`string`)
-
     })
-
   })
-
 })
-
 
 // FILE UTIL LIBRARY
 // =========================================================== //
@@ -86,7 +78,6 @@ const htmlMin = `<!DOCTYPE html><html><body><h1>My First Heading</h1><p>My first
 
 describe(`File utility library`, () => {
   it(`Html test files exist`, () => {
-
     chai.expect(fs.existsSync(`./htmls/html_min.html`)).to.be.true
     chai.expect(fs.existsSync(`./htmls/test.html`)).to.be.true
     chai.expect(fs.existsSync(`./htmls/test_beauty.html`)).to.be.true
@@ -111,7 +102,6 @@ describe(`File utility library`, () => {
       chai.expect(json.test).to.be.a(`string`)
     })
   })
-
 })
 
 // cp.exec(`rm ./htmls/saveHTML_test.html`)

@@ -9,7 +9,7 @@ const methods = (function () {
   return {
     // Adds new channel
     // =========================================================== //
-    add_route: function(channelID, file_name) {
+    add_route: function (channelID, file_name) {
       cp.exec(`./.add_route.bash ${channelID} ${file_name}`, (err, stdout, stderr) => { // console.log(stdout)
         if (err) throw err
       })
