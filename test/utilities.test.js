@@ -13,19 +13,20 @@ describe(`Main utility library`, () => {
   })
 
   it(`GenUUID generates proper UUIDs`, () => {
-    let regex, uuid
+    let regex, uuid, pass
     regex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
     uuid = mainUtil.methods.genUUID()
+    pass = regex.test(uuid)
 
     chai.expect(uuid).to.be.a(`string`)
-    chai.expect(regex.test(uuid)).to.be.true
+    chai.expect(pass).to.be.true
   })
 
   it(`_escapesString escapes single-quotes`, () => {
     let str = mainUtil.methods._escapeString(`This is a demo string with 'single-quotes'`)
 
     chai.expect(str).to.be.a(`string`)
-    chai.assert.equal(str, `This is a demo string with \\\'single-quotes\\\'`)
+    chai.assert.equal(str, `This is a demo string with \\'single-quotes\\'`)
   })
 
   it(`_escapesString escapes double-quotes`, () => {
@@ -37,22 +38,22 @@ describe(`Main utility library`, () => {
 
   it(`flattenJSON flattens json`, () => {
     fileUtil.methods.readJSON(`json_tester`, (json) => {
-      let flat_json = mainUtil.methods.flattenJSON(json)
+      let flatJSON = mainUtil.methods.flattenJSON(json)
 
-      chai.expect(flat_json).to.be.a(`object`)
-      chai.expect(flat_json).to.have.property(`user`)
-      chai.expect(flat_json).to.have.property(`upvoted.data[0].id`)
-      chai.expect(flat_json).to.have.property(`upvoted.data[0].fullname`)
+      chai.expect(flatJSON).to.be.a(`object`)
+      chai.expect(flatJSON).to.have.property(`user`)
+      chai.expect(flatJSON).to.have.property(`upvoted.data[0].id`)
+      chai.expect(flatJSON).to.have.property(`upvoted.data[0].fullname`)
 
-      chai.expect(flat_json[`user`]).to.be.a(`string`)
-      chai.expect(flat_json[`upvoted.data[0].id`]).to.be.a(`string`)
-      chai.expect(flat_json[`upvoted.data[0].fullname`]).to.be.a(`string`)
+      chai.expect(flatJSON[`user`]).to.be.a(`string`)
+      chai.expect(flatJSON[`upvoted.data[0].id`]).to.be.a(`string`)
+      chai.expect(flatJSON[`upvoted.data[0].fullname`]).to.be.a(`string`)
     })
   })
 
   it(`unflattenJSON unflattens json`, () => {
-    fileUtil.methods.readJSON(`flat_json_tester`, (flat_json) => {
-      let json = mainUtil.methods.unflattenJSON(flat_json)
+    fileUtil.methods.readJSON(`flatJSON_tester`, (flatJSON) => {
+      let json = mainUtil.methods.unflattenJSON(flatJSON)
 
       chai.expect(json).to.be.a(`object`)
       chai.expect(json).to.have.property(`user`)
@@ -73,8 +74,8 @@ describe(`Main utility library`, () => {
 // =========================================================== //
 const htmlMin = `<!DOCTYPE html><html><body><h1>My First Heading</h1><p>My first paragraph.</p></body></html>`
 
-// fileUtil.methods.saveHTML(`saveHTML_test`, htmlMin)
-// fileUtil.methods.saveJSON(`saveJSON_test`, { test: `JSON` })
+fileUtil.methods.saveHTML(`saveHTML_test`, htmlMin)
+fileUtil.methods.saveJSON(`saveJSON_test`, { test: `JSON` })
 
 describe(`File utility library`, () => {
   it(`Html test files exist`, () => {
@@ -104,5 +105,7 @@ describe(`File utility library`, () => {
   })
 })
 
-// cp.exec(`rm ./htmls/saveHTML_test.html`)
-// cp.exec(`rm ./feeds/saveJSON_test.json`)
+setTimout(() => {
+  cp.exec(`rm ./htmls/saveHTML_test.html`)
+  cp.exec(`rm ./feeds/saveJSON_test.json`)
+}, 5000)

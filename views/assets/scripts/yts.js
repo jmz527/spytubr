@@ -1,15 +1,11 @@
-
 $(document).ready(function () {
 	// EVENT HANDLING
 	// -------------------------------------------------------------- //
   let vWraps = document.getElementsByClassName('vid-wrap')
-
   document.getElementById('list').addEventListener('click', function (e) {
-    if (e.target && e.target.nodeName == 'BUTTON') {
-      let watchedBtn, activeBtn
-      watchedBtn = $(e.target).hasClass('watched-btn')
-      activeBtn = $(e.target).hasClass('active-btn')
-
+    if (e.target && e.target.nodeName === 'BUTTON') {
+      let watchedBtn = $(e.target).hasClass('watched-btn')
+      let activeBtn = $(e.target).hasClass('active-btn')
       if (watchedBtn && !activeBtn) {
         watchedBtnListener(e)
       } else if (!watchedBtn && activeBtn) {
@@ -17,32 +13,26 @@ $(document).ready(function () {
       }
     }
   })
-
 	// AJAX STUFF
   function activeBtnListener (e) {
-    idx = parseInt(e.target.getAttribute('data-index'))
-
+    let idx = parseInt(e.target.getAttribute('data-index'))
     $.ajax({
       url: 'http://localhost:1337/api/<%= channel %>/active/' + idx,
       dataType: 'jsonp',
       context: document.body
     }).done((res) => (res.status === 200) ? activeDOMSwitch(e) : alert('ERROR: Refresh Page'))
   }
-
   function watchedBtnListener (e) {
-    idx = parseInt(e.target.getAttribute('data-index'))
-
+    let idx = parseInt(e.target.getAttribute('data-index'))
     $.ajax({
       url: 'http://localhost:1337/api/<%= channel %>/watched/' + idx,
       dataType: 'jsonp',
       context: document.body
     }).done((res) => (res.status === 200) ? watchedDOMSwitch(e) : alert('ERROR: Refresh Page'))
   }
-
 	// Active DOM manipulation stuff
   function activeDOMSwitch (e) {
-    selected = vWraps[e.target.getAttribute('data-index')]
-
+    let selected = vWraps[e.target.getAttribute('data-index')]
     if ($(selected).hasClass('active') && !$(selected).hasClass('empty')) {
       $(selected).removeClass('active')
       $(e.target).removeClass('active-btn-true').addClass('active-btn-false').html('false')
@@ -54,7 +44,6 @@ $(document).ready(function () {
       $(e.target).removeClass('active-btn-false').addClass('active-btn-true').html('true')
     }
   }
-
 	// Watched DOM manipulation stuff
   function watchedDOMSwitch (e) {
     if ($(e.target).hasClass('watched-btn-true')) {
