@@ -3,7 +3,6 @@ const request = require('request')
 const cheerio = require('cheerio')
 const cp = require(`child_process`)
 const fileUtil = require('./util/file_util')
-const tubrUtil = require('./util/tubr_util')
 const globals = require('./globals')
 const methods = (function () {
   return {
@@ -71,12 +70,12 @@ const methods = (function () {
     match_feeds: function (file_name, feed) {
       var new_json, all, dict = {}, newItems = []
       new_json = { channel: file_name, channel_id: feed.channel_id, data: [] }
-      all = tubrUtil.methods.checkForAllFile('./feeds/yts_' + file_name + '_all.json', new_json)
+      all = methods.checkForAllFile('./feeds/yts_' + file_name + '_all.json', new_json)
             // populate the dict
       feed.data.forEach(function (item) { return dict[item.id] = { match: null, item: item } })
             // within dict loop, check if "feed" ids match with any "all" ids
       for (key in dict) {
-        dict[key].match = all.data.some(function (item) { return tubrUtil.methods.matches(key, item.id) })
+        dict[key].match = all.data.some(function (item) { return methods.matches(key, item.id) })
       }
       for (key in dict) {
                 // add new attrs
@@ -129,6 +128,16 @@ const methods = (function () {
         fileUtil.methods.saveJSON('yts_' + file_name + '_all', new_json) // SAVE JSON
         return new_json
       })
+    },
+    // Helpers
+    // =========================================================== //
+    matches: (arg1, arg2) => { return arg1 === arg2 },
+    checkForAllFile: (filePath, freshObj) => { // If "all" file doesn't exist, create it
+      if (!fs.existsSync(`./${filePath}`)) { console.log(`${filePath} file not found`)
+        return freshObj
+      } else {
+        return require(`./${filePath}`)
+      }
     }
   }
 }())
