@@ -1,5 +1,5 @@
 const fs = require('fs')
-const beautify_html = require('js-beautify').html
+const beautifyHTML = require('js-beautify').html
 const minify = require('html-minifier').minify
 
 const methods = (function () {
@@ -7,7 +7,7 @@ const methods = (function () {
 
 		// HTML BEAUTIFY
 		// =========================================================== //
-    beautifyHTML: function (html_path) { // console.log(html_path);
+    beautifyHTML: function (htmlPath) { // console.log(htmlPath);
       const bConfig = {
         'indent_size': 4,
         'html': {
@@ -19,21 +19,21 @@ const methods = (function () {
         'js': { 'preserve-newlines': true }
       }
 
-      fs.readFile(html_path, 'utf8', function (err, data) {
+      fs.readFile(htmlPath, 'utf8', function (err, data) {
         if (err) throw err
 
-        let newHTML = beautify_html(data, bConfig)
+        let newHTML = beautifyHTML(data, bConfig)
 
-        fs.writeFile(html_path, newHTML, function (err) {
+        fs.writeFile(htmlPath, newHTML, function (err) {
           console.log(`\x1b[36m%s\x1b[0m`, `HTML file successfully beautified!`)
-          console.log(`\x1b[36m%s\x1b[0m`, `Check your project directory for the ${html_path} file`)
+          console.log(`\x1b[36m%s\x1b[0m`, `Check your project directory for the ${htmlPath} file`)
         })
       })
     },
 
 		// HTML MINIFY
 		// =========================================================== //
-    minifyHTML: function (html_path) { // console.log(html_path);
+    minifyHTML: function (htmlPath) { // console.log(htmlPath);
 		// https://kangax.github.io/html-minifier/
 		// https://github.com/kangax/html-minifier
 
@@ -53,14 +53,14 @@ const methods = (function () {
         trimCustomFragments: true
       }
 
-      fs.readFile(html_path, 'utf8', function (err, data) {
+      fs.readFile(htmlPath, 'utf8', function (err, data) {
         if (err) throw err
 
         let newHTML = minify(data, mConfig)
 
-        fs.writeFile(html_path, newHTML, function (err) {
+        fs.writeFile(htmlPath, newHTML, function (err) {
           console.log(`\x1b[36m%s\x1b[0m`, `HTML file successfully minified!`)
-          console.log(`\x1b[36m%s\x1b[0m`, `Check your project directory for the ${html_path} file`)
+          console.log(`\x1b[36m%s\x1b[0m`, `Check your project directory for the ${htmlPath} file`)
         })
       })
     },
@@ -92,9 +92,9 @@ const methods = (function () {
     readJSON: function (fileName, callback) {
 			// If "all" file doesn't exist, error
       if (fs.existsSync(`./feeds/${fileName}.json`)) {
-        let new_json = require(`../feeds/${fileName}.json`)
+        let newJSON = require(`../feeds/${fileName}.json`)
 
-        callback(new_json)
+        callback(newJSON)
       } else {
         console.log(`\x1b[31m%s\x1b[0m`, `ERROR: Something went wrong`)  // red
         console.log(`\x1b[31m%s\x1b[0m`, `If you're missing this file: "./feeds/${fileName}.json"`)

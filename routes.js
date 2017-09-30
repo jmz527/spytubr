@@ -5,9 +5,8 @@ const cp = require(`child_process`)
 // HELPER VARS
 // --------------------------------------------------------------------------//
 const router = express.Router()
-	  router.use(bodyParser.json()) // support json encoded bodies
-	  router.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies
-const genUUID = require(`./util/main_util`).methods.genUUID
+router.use(bodyParser.json()) // support json encoded bodies
+router.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies
 const routes = require(`./routes.json`)
 
 // MAIN ROUTES

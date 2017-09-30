@@ -1,16 +1,13 @@
 const fs = require(`fs`)
-var file_util = require('./file_util')
 
 const methods = (function () {
   return {
     matches: (arg1, arg2) => { return arg1 == arg2 },
-    checkForAllFile: (file_path, fresh_obj) => { // If "all" file doesn't exist, create it
-      if (!fs.existsSync(`./${file_path}`)) {
-        console.log(`${file_path} file not found`)
-
-        return fresh_obj
+    checkForAllFile: (filePath, freshObj) => { // If "all" file doesn't exist, create it
+      if (!fs.existsSync(`./${filePath}`)) { console.log(`${filePath} file not found`)
+        return freshObj
       } else {
-        return require(`../${file_path}`)
+        return require(`../${filePath}`)
       }
     }
   }

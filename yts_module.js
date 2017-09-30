@@ -2,8 +2,8 @@ const fs = require('fs')
 const request = require('request')
 const cheerio = require('cheerio')
 const cp = require(`child_process`)
-const file_util = require('./util/file_util')
-const tubr_util = require('./util/tubr_util')
+const fileUtil = require('./util/file_util')
+const tubrUtil = require('./util/tubr_util')
 const globals = require('./globals')
 const methods = (function () {
   return {
@@ -13,17 +13,17 @@ const methods = (function () {
       cp.exec(`./.add_route.bash ${channelID} ${file_name}`, (err, stdout, stderr) => { // console.log(stdout)
         if (err) throw err
       })
-      file_util.methods.readJSON('../routes', function (routes) { // console.log(routes)
+      fileUtil.methods.readJSON('../routes', function (routes) { // console.log(routes)
         routes.yts.push(`/yts/${file_name}`)
-        file_util.methods.saveJSON('../routes', routes)
+        fileUtil.methods.saveJSON('../routes', routes)
       })
     },
     // Scrapes and saves
     // =========================================================== //
     fetch_and_save: function (channel, file_name) {
       methods.fetch_feeds(channel, file_name, function (data) {
-        file_util.methods.saveHTML('yts_' + file_name, data.html) // HTML SAVE
-        file_util.methods.saveJSON('yts_' + file_name, data.json) // JSON SAVE
+        fileUtil.methods.saveHTML('yts_' + file_name, data.html) // HTML SAVE
+        fileUtil.methods.saveJSON('yts_' + file_name, data.json) // JSON SAVE
       })
     },
     // Scrapes and matches
@@ -62,7 +62,7 @@ const methods = (function () {
     // Match files
     // =========================================================== //
     match_files: function (file_name) {
-      file_util.methods.readJSON('yts_' + file_name, function (feed) {
+      fileUtil.methods.readJSON('yts_' + file_name, function (feed) {
         methods.match_feeds(file_name, feed)
       })
     },
@@ -71,12 +71,12 @@ const methods = (function () {
     match_feeds: function (file_name, feed) {
       var new_json, all, dict = {}, newItems = []
       new_json = { channel: file_name, channel_id: feed.channel_id, data: [] }
-      all = tubr_util.methods.checkForAllFile('./feeds/yts_' + file_name + '_all.json', new_json)
+      all = tubrUtil.methods.checkForAllFile('./feeds/yts_' + file_name + '_all.json', new_json)
             // populate the dict
       feed.data.forEach(function (item) { return dict[item.id] = { match: null, item: item } })
             // within dict loop, check if "feed" ids match with any "all" ids
       for (key in dict) {
-        dict[key].match = all.data.some(function (item) { return tubr_util.methods.matches(key, item.id) })
+        dict[key].match = all.data.some(function (item) { return tubrUtil.methods.matches(key, item.id) })
       }
       for (key in dict) {
                 // add new attrs
@@ -88,7 +88,7 @@ const methods = (function () {
       if (newItems.length) {
         console.log('\x1b[32m%s\x1b[0m', 'Adding ' + newItems.length + ' new items to "yts_' + file_name + '_all.json" file')
         new_json.data = newItems.concat(all.data) // add the new items
-        file_util.methods.saveJSON('yts_' + file_name + '_all', new_json) // SAVE JSON
+        fileUtil.methods.saveJSON('yts_' + file_name + '_all', new_json) // SAVE JSON
       } else if (newItems.length === 0) {
         console.log('\u001B[31m%s\u001B[0m', 'No new items for ' + file_name + ' feed')
       }
@@ -97,7 +97,7 @@ const methods = (function () {
     // Mark active
     // =========================================================== //
     mark_active: function (file_name, index, bool) {
-      file_util.methods.readJSON('yts_' + file_name + '_all', function (new_json) {
+      fileUtil.methods.readJSON('yts_' + file_name + '_all', function (new_json) {
         if (index === 'all') {
           new_json.data.forEach(function (item) { return item.active = typeof bool === 'boolean' ? bool : !item.active })
         } else if (index === 'all_watched') {
@@ -108,14 +108,14 @@ const methods = (function () {
           new_json.data[index].active = bool || !new_json.data[index].active
           console.log(new_json.data[index])
         }
-        file_util.methods.saveJSON('yts_' + file_name + '_all', new_json) // JSON SAVE
+        fileUtil.methods.saveJSON('yts_' + file_name + '_all', new_json) // JSON SAVE
         return new_json
       })
     },
     // Mark watched
     // =========================================================== //
     mark_watched: function (file_name, index, bool) {
-      file_util.methods.readJSON('yts_' + file_name + '_all', function (new_json) {
+      fileUtil.methods.readJSON('yts_' + file_name + '_all', function (new_json) {
         if (index === 'all') {
           new_json.data.forEach(function (item) { return item.watched = typeof bool === 'boolean' ? bool : !item.watched })
         } else if (index === 'all_active') {
@@ -126,7 +126,7 @@ const methods = (function () {
           new_json.data[index].watched = !new_json.data[index].watched
           console.log(new_json.data[index])
         }
-        file_util.methods.saveJSON('yts_' + file_name + '_all', new_json) // SAVE JSON
+        fileUtil.methods.saveJSON('yts_' + file_name + '_all', new_json) // SAVE JSON
         return new_json
       })
     }

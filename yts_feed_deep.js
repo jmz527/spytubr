@@ -6,7 +6,7 @@
 
 // var url = `https://m.youtube.com/channel/${channel}/videos`;
 
-var lockup, contents, durs, vids, obj, new_json = { data: [] }
+var lockup, contents, durs, vids, obj, newJSON = { data: [] }
 lockup = document.getElementsByClassName('yt-lockup')
 contents = document.getElementsByClassName('yt-lockup-content')
 durs = document.getElementsByClassName('accessible-description')
@@ -20,7 +20,7 @@ for (var i = 0; i < contents.length; i++) {
     views: contents[i].childNodes[3].getElementsByTagName('li')[0].innerHTML
   }
 
-  new_json.data.push(obj)
+  newJSON.data.push(obj)
 }
 
-JSON.stringify(new_json)
+JSON.stringify(newJSON)

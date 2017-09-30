@@ -2,42 +2,42 @@ const fs = require('fs')
 const cp = require(`child_process`)
 const chai = require(`chai`)
 
-const main_util = require(`../util/main_util`)
-const file_util = require(`../util/file_util`)
+const mainUtil = require(`../util/main_util`)
+const fileUtil = require(`../util/file_util`)
 
 // MAIN UTIL LIBRARY
 // =========================================================== //
 describe(`Main utility library`, () => {
   it(`GenUUID returns a string`, () => {
-    chai.expect(main_util.methods.genUUID()).to.be.a(`string`)
+    chai.expect(mainUtil.methods.genUUID()).to.be.a(`string`)
   })
 
   it(`GenUUID generates proper UUIDs`, () => {
     let regex, uuid
     regex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
-    uuid = main_util.methods.genUUID()
+    uuid = mainUtil.methods.genUUID()
 
     chai.expect(uuid).to.be.a(`string`)
     chai.expect(regex.test(uuid)).to.be.true
   })
 
   it(`_escapesString escapes single-quotes`, () => {
-    let str = main_util.methods._escapeString(`This is a demo string with 'single-quotes'`)
+    let str = mainUtil.methods._escapeString(`This is a demo string with 'single-quotes'`)
 
     chai.expect(str).to.be.a(`string`)
     chai.assert.equal(str, `This is a demo string with \\\'single-quotes\\\'`)
   })
 
   it(`_escapesString escapes double-quotes`, () => {
-    let str = main_util.methods._escapeString(`This is a demo string with "double-quotes"`)
+    let str = mainUtil.methods._escapeString(`This is a demo string with "double-quotes"`)
 
     chai.expect(str).to.be.a(`string`)
     chai.assert.equal(str, `This is a demo string with \\"double-quotes\\"`)
   })
 
   it(`flattenJSON flattens json`, () => {
-    file_util.methods.readJSON(`json_tester`, (json) => {
-      let flat_json = main_util.methods.flattenJSON(json)
+    fileUtil.methods.readJSON(`json_tester`, (json) => {
+      let flat_json = mainUtil.methods.flattenJSON(json)
 
       chai.expect(flat_json).to.be.a(`object`)
       chai.expect(flat_json).to.have.property(`user`)
@@ -51,8 +51,8 @@ describe(`Main utility library`, () => {
   })
 
   it(`unflattenJSON unflattens json`, () => {
-    file_util.methods.readJSON(`flat_json_tester`, (flat_json) => {
-      let json = main_util.methods.unflattenJSON(flat_json)
+    fileUtil.methods.readJSON(`flat_json_tester`, (flat_json) => {
+      let json = mainUtil.methods.unflattenJSON(flat_json)
 
       chai.expect(json).to.be.a(`object`)
       chai.expect(json).to.have.property(`user`)
@@ -73,8 +73,8 @@ describe(`Main utility library`, () => {
 // =========================================================== //
 const htmlMin = `<!DOCTYPE html><html><body><h1>My First Heading</h1><p>My first paragraph.</p></body></html>`
 
-// file_util.methods.saveHTML(`saveHTML_test`, htmlMin)
-// file_util.methods.saveJSON(`saveJSON_test`, { test: `JSON` })
+// fileUtil.methods.saveHTML(`saveHTML_test`, htmlMin)
+// fileUtil.methods.saveJSON(`saveJSON_test`, { test: `JSON` })
 
 describe(`File utility library`, () => {
   it(`Html test files exist`, () => {
@@ -96,7 +96,7 @@ describe(`File utility library`, () => {
   })
 
   it(`readJSON reads json from a file properly`, () => {
-    file_util.methods.readJSON(`saveJSON_test`, (json) => {
+    fileUtil.methods.readJSON(`saveJSON_test`, (json) => {
       chai.expect(json).to.be.a(`object`)
       chai.expect(json).to.have.property(`test`)
       chai.expect(json.test).to.be.a(`string`)
