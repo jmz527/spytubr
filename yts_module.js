@@ -1,28 +1,42 @@
-var fs = require('fs')
-var request = require('request')
-var cheerio = require('cheerio')
-var file_util = require('./util/file_util')
-var spydr_util = require('./util/spydr_util')
-var globals = require('./globals')
-var methods = (function () {
+const fs = require('fs')
+const request = require('request')
+const cheerio = require('cheerio')
+const cp = require(`child_process`)
+const file_util = require('./util/file_util')
+const spydr_util = require('./util/spydr_util')
+const globals = require('./globals')
+const methods = (function () {
   return {
-        // Scrapes and saves
-        // =========================================================== //
+    // Adds new channel
+    // =========================================================== //
+    add_route: function(channelID, file_name) {
+      cp.exec(`./.add_route.bash ${channelID} ${file_name}`, (err, stdout, stderr) => { // console.log(stdout)
+        if (err) throw err
+      })
+
+      file_util.methods.readJSON('../routes', function (routes) { // console.log(routes)
+        routes.yts.push(`/yts/${file_name}`)
+
+        file_util.methods.saveJSON('../routes', routes)
+      })
+    },
+    // Scrapes and saves
+    // =========================================================== //
     fetch_and_save: function (channel, file_name) {
       methods.fetch_feeds(channel, file_name, function (data) {
         file_util.methods.saveHTML('yts_' + file_name, data.html) // HTML SAVE
         file_util.methods.saveJSON('yts_' + file_name, data.json) // JSON SAVE
       })
     },
-        // Scrapes and matches
-        // =========================================================== //
+    // Scrapes and matches
+    // =========================================================== //
     fetch_and_match: function (channel, file_name) {
       methods.fetch_feeds(channel, file_name, function (data) {
         methods.match_feeds(file_name, data.json)
       })
     },
-        // Scrape feed
-        // =========================================================== //
+    // Scrape feed
+    // =========================================================== //
     fetch_feeds: function (channel, file_name, callback) {
       var url = globals.URL + '/channel/' + channel + '/videos'
       request(url, function (err, res, html) {
@@ -47,15 +61,15 @@ var methods = (function () {
         callback({ url: url, file_name: file_name, json: json, html: html })
       })
     },
-        // Match files
-        // =========================================================== //
+    // Match files
+    // =========================================================== //
     match_files: function (file_name) {
       file_util.methods.readJSON('yts_' + file_name, function (feed) {
         methods.match_feeds(file_name, feed)
       })
     },
-        // Match feeds
-        // =========================================================== //
+    // Match feeds
+    // =========================================================== //
     match_feeds: function (file_name, feed) {
       var new_json, all, dict = {}, newItems = []
       new_json = { channel: file_name, channel_id: feed.channel_id, data: [] }
@@ -82,8 +96,8 @@ var methods = (function () {
       }
       return new_json
     },
-        // Mark active
-        // =========================================================== //
+    // Mark active
+    // =========================================================== //
     mark_active: function (file_name, index, bool) {
       file_util.methods.readJSON('yts_' + file_name + '_all', function (new_json) {
         if (index == 'all') {
@@ -100,8 +114,8 @@ var methods = (function () {
         return new_json
       })
     },
-        // Mark watched
-        // =========================================================== //
+    // Mark watched
+    // =========================================================== //
     mark_watched: function (file_name, index, bool) {
       file_util.methods.readJSON('yts_' + file_name + '_all', function (new_json) {
         if (index == 'all') {

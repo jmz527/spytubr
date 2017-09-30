@@ -1,6 +1,9 @@
 const YTS = require(`./yts_module`)
 
 switch (process.argv[2]) {
+  case `add_route`:
+    YTS.methods.add_route(process.argv[3], process.argv[4])
+    break
   case `fetch`:
     YTS.methods.fetch_and_match(process.argv[3], process.argv[4])
     break

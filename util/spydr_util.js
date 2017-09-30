@@ -12,13 +12,6 @@ const methods = (function () {
       } else {
         return require(`../${file_path}`)
       }
-    },
-    addRoute: (file_name) => {
-      file_util.methods.readJSON('../routes', function (routes) { // console.log(routes)
-        routes.yts.push(`/yts/${file_name}`)
-
-        file_util.methods.saveJSON('../routes', routes)
-      })
     }
   }
 }())
